@@ -46,6 +46,16 @@ void *callClojure(void *ptr) {
 
 	printf("Calling Clojure function...\n"); fflush(stdout);
 	env->CallObjectMethod(testFunctionClass, callMe);
+	jthrowable exception = env->ExceptionOccurred();
+
+	if (exception) {
+		printf("Error encountered when calling Clojure function:\n");
+		fflush(stdout);
+		env->ExceptionDescribe();
+		env->ExceptionClear();
+		return NULL;
+	}
+
 	printf("Clojure call completed.\n"); fflush(stdout);
 
 	return NULL;
