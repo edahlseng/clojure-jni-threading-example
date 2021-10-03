@@ -1,0 +1,2 @@
+{:deps {com.github.ramanrajarathinam/native-utils {:mvn/version "1.0.0"}}
+ :paths ["targets/jni/Test.jar"]}

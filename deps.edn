@@ -1,0 +1,2 @@
+{:deps {Test {:local/root "./native-library"}}
+ :paths ["sources"]}
